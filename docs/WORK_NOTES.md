@@ -33,3 +33,12 @@
 ## What is Split?
 - A split is just a subset of the dataset, like train, test, or validation, used to organize data for training, testing, or evaluation.
 - My dataset: In dataset, the subset corpus has only one split(train), while the question_answers subset has two splits(train,test).
+
+# Vector Database and Vector Embeddings - https://www.ibm.com/think/topics/vector-database
+- Vector embeddings are basically converting text (or any data) into numbers so that machines can understand the meaning, not just the words.
+- Each piece of text (like a chunk) gets converted into a vector, which is just a list of numbers representing its meaning.
+- Similar meanings will have similar vectors. For example, “car” and “vehicle” will be close to each other even if the words are different.
+- These vectors are stored in a vector database.
+- The vector DB doesn’t search using keywords like normal databases. Instead, it compares vectors and finds the closest ones.
+- So when a query comes in, it is also converted into a vector, and then the DB finds the most similar vectors (i.e., relevant data).
+- This is what makes semantic search possible and helps in getting more accurate results.
