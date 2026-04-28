@@ -32,9 +32,9 @@
 
 ## 1. What project work have you achieved since last class last week?
 - Created a separate jupyter notebook to test and debug the issues.
-- Tested the `google/flan-T5-base` model for descriptive answers by passing an entire document and asking it to describe it in 250 words. It returned only 4–5 words, so I changed the model to Mistral (mistralai/Mistral-7B-Instruct-v0.2).
+- Tested the `google/flan-T5-base` model for descriptive answers by passing an entire document and asking it to describe it in 250 words. It returned only 4–5 words, so I changed the model to Mistral `(mistralai/Mistral-7B-Instruct-v0.2)`.
 - Tested the retrieval accuracy using the dataset and checked whether the original source ID is present in the retrieved chunks. I changed the chunk size to 1000 and the chunk overlap to 300, which increased my accuracy to 90%.
-- Performed reranking of chunks using BAAI/bge-reranker-base.
+- Performed reranking of chunks using `BAAI/bge-reranker-base.`
 
 
 ## 2. What challenges, setbacks, or blockers have you encountered?
