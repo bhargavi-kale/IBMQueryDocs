@@ -56,3 +56,33 @@
 ### c. Tangible work products
 - Changes in the RAG pipeline method and corrections to it.
 - Integrate the changes from my test file(mistrall_test) to main.ipynb.
+
+## Sprint3
+
+## 1. What project work have you achieved since last class last week?
+- Attempted testing the application using the `RAGAS` framework.
+- Modularized the Jupyter Notebook into Python modules within the src folder.
+- Worked on project documentation (README.md).
+
+
+## 2. What challenges, setbacks, or blockers have you encountered?
+
+- Faced timeout errors while running the RAGAS framework; execution often failed even after running for nearly an hour.
+- Encountered issues connecting to the kernel after converting the notebook into Python modules.
+
+
+## 3. What is your actionable and feasible plan for this week’s sprint?
+
+### a. Time allocation and schedule
+- Thursday: 3–4 hours  
+- Saturday: 3–4 hours  
+
+### b. Specific activities/tasks
+- Identify ways to execute Python files similarly to Jupyter Notebook workflows.
+- Implement citation support for generated answers.
+- Work on deployment using Hugging Face and Gradio.
+
+### c. Tangible work products
+- Successfully run the complete RAG pipeline using Python files.
+- Include source IDs along with generated answers.
+- Deploy the application on Hugging Face and Gradio.
