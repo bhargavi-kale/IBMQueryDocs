@@ -1,52 +1,64 @@
-# Design Document - QueryDocs
+# Design Document - IBMQueryDocs
 
 ## 1. Architecture Diagram
 ## Pre-processing:
-        Documents
+        Documents (IBM WatsonxDocsQA)
              ↓
-        Chunking
-            ↓ 
-        Embeddings 
+        Chunking (1000 chars, 300 overlap)
+            ↓
+        Embeddings (sentence-transformers)
             ↓
         Vector DB (ChromaDB)
-## Actual Retrieval:
+## Retrieval & Generation:
         User Query
              ↓
    Query → Embedding Model
              ↓
      Vector Database (ChromaDB)
-        (Similarity Search)
+        (MMR: k=15, fetch_k=50)
              ↓
-   Top Relevant Chunks Retrieved
+   Top 15 Chunks Retrieved
+             ↓
+      Reranking (BAAI/bge-reranker)
+             ↓
+   Top 3 Reranked Chunks
              ↓
       + User Query Combined
              ↓
-        LLM (Flan-T5)
+        LLM (Mistral-7B-Instruct)
+             ↓
+      Final Answer Generated
+             ↓
+      + User Query Combined
+             ↓
+        LLM (Mistral-7B-Instruct)
              ↓
       Final Answer Generated
 
 
 ## 2. Foundation Model Selection
 
-Model: Flan-T5
-- Encoder-Decoder model:
-  - Encoder understands context
-  - Decoder generates answer
+Model: Mistral-7B-Instruct-v0.2
+- Decoder-only transformer model
+- Instruction-tuned for following user instructions
 Why:
-- Good for question answering
-- Works well with provided context (RAG)
-- Faster and lightweight
+- Excellent for question answering with context (RAG)
+- Strong performance on technical documentation
+- Good balance of quality and efficiency
 
 Strengths:
-- Encoder-Decoder model(More understanding on context)
-- Runs on CPU
+- Superior instruction following
+- Effective context processing
+- CPU-compatible inference
 
 Limitations:
-- Less powerful than larger models
+- Requires significant memory (~14GB)
+- Slower than smaller models
 
 ## 3. Symbolic Components
-- Chunking
-- Similarity search (top-k)
+- Chunking (1000 chars, 300 overlap)
+- Similarity search with MMR (k=15, fetch_k=50)
+- Reranking (top-3 with BAAI/bge-reranker-base)
 - Citation tracking
 
 Why:
@@ -71,6 +83,15 @@ Why:
 
 ## 6. Risk Analysis
 - Wrong retrieval
-- Hallucination 
+- Hallucination
 - Biased data leads to biased answers
+             ↓
+   Top 3 Reranked Chunks
+             ↓
+      + User Query Combined
+             ↓
+        LLM (Mistral-7B-Instruct-v0.2)
+             ↓
+      Final Answer Generated
+```
 
