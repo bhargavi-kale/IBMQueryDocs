@@ -28,13 +28,6 @@
         LLM (Mistral-7B-Instruct)
              ↓
       Final Answer Generated
-             ↓
-      + User Query Combined
-             ↓
-        LLM (Mistral-7B-Instruct)
-             ↓
-      Final Answer Generated
-
 
 ## 2. Foundation Model Selection
 
