@@ -78,13 +78,5 @@ Why:
 - Wrong retrieval
 - Hallucination
 - Biased data leads to biased answers
-             ↓
-   Top 3 Reranked Chunks
-             ↓
-      + User Query Combined
-             ↓
-        LLM (Mistral-7B-Instruct-v0.2)
-             ↓
-      Final Answer Generated
 ```
 
