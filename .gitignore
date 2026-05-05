@@ -22,3 +22,7 @@ __pycache__/
 
 # Windows
 Thumbs.db
+
+#gradio
+certificate.pem
+*.pem
