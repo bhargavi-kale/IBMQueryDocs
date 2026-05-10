@@ -75,7 +75,7 @@ The project uses the `ibm-research/watsonxDocsQA` dataset from Hugging Face:
 - **Vector store**: ChromaDB with MMR retrieval (k=15, fetch_k=50, lambda_mult=0.6)
 
 ## Deployment Info
-For now it is not deployed
+For now it is not deployed, due to less Hugging face spaces
 
 ## Instructions on How to Run It and What to Expect
 
@@ -124,6 +124,4 @@ For now it is not deployed
 
 
 ## License
-MIT License
-
 Copyright (c) 2026 Bhargavi Kale
